@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
+import MyHttp from '@/plugins/MyHttp';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/common.css'
 
 Vue.config.productionTip = false
+// 注册插件ElementUI
 Vue.use(ElementUI);
-/* eslint-disable no-new */
+// 注册MyHttp插件
+Vue.use(MyHttp);
 new Vue({
   el: '#app',
   router,
