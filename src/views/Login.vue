@@ -30,19 +30,19 @@ export default {
     }
   },
   methods:{
-    handleLogin(){
-      let This = this;
-      console.log(this)
-      this.$http.post('login',this.formData).then(function(res){
+    async handleLogin(){
+      const res = await this.$http.post('login',this.formData)
         const {meta: { msg, status } } = res.data;
         if(status == 200){
-          This.$message.success(msg);
+          // 成功
+          // 跳转/提示/记录token
+          this.$message.success(msg);
+          // 记录token
           sessionStorage.setItem('token',res.data.data.token);
-          This.$router.push('/')
+          this.$router.push('/')
         }else{
-          This.$message.error(msg)
+          this.$message.error(msg)
         }
-      }).catch(err => console.log(err));
     }
   }
 }
