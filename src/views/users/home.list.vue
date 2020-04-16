@@ -121,7 +121,7 @@ export default {
   },
   created() {
     // 组件创建完毕，加载数据
-    this.loadData();
+    // this.loadData();
   },
   methods: {
     // 异步请求用户列表数据
