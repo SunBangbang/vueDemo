@@ -4,7 +4,8 @@
       <el-header>
         <el-row>
           <el-col :span="4">
-            <!-- <img src="@./assets/logo.png" alt=""> -->
+            <!-- <img src="@/assets/logo.png" alt=""> -->
+            电商后台管理系统
           </el-col>
           <el-col class="middle" :span="19">
             <span>电商后台管理系统</span>
@@ -74,13 +75,13 @@ export default {
   },
    // 判断是否登录
   beforeCreate() {
-    // const token = sessionStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     // 判断是否获取到token
-    // if (!token) {
-    //   // 如果token不存在，认为没有登录
-    //   this.$message.warning('请先登录');
-    //   this.$router.push('/login');
-    // }
+    if (!token) {
+      // 如果token不存在，认为没有登录
+      this.$message.warning('请先登录');
+      this.$router.push('/login');
+    }
   },
   methods:{
     handleLogout(){

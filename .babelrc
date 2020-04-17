@@ -1,5 +1,7 @@
 {
+  // 制定转码的规则
   "presets": [
+    // env是使用babel-preset-env插件将js进行转码成es5，并且设置不转码的AMD,COMMONJS的模块文件，制定浏览器的兼容
     ["env", {
       "modules": false,
       "targets": {
@@ -9,4 +11,19 @@
     "stage-2"
   ],
   "plugins": ["transform-vue-jsx", "transform-runtime"]
+  // "plugins": [
+  //   [
+  //   "component",
+  //   {
+  //     "libraryName": "element-ui",
+  //     "styleLibraryName": "theme-chalk"
+  //   }
+  //   ]
+  // ],
+  // "env": {
+  //   "test": {
+  //     "presets": ["env", "stage-2"],
+  //     "plugins": ["istanbul"]
+  //   }
+  // }
 }

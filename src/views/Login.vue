@@ -31,18 +31,19 @@ export default {
   },
   methods:{
     async handleLogin(){
-      const res = await this.$http.post('login',this.formData)
-        const {meta: { msg, status } } = res.data;
-        if(status == 200){
-          // 成功
-          // 跳转/提示/记录token
-          this.$message.success(msg);
-          // 记录token
-          sessionStorage.setItem('token',res.data.data.token);
-          this.$router.push('/')
-        }else{
-          this.$message.error(msg)
-        }
+      // const res = await this.$http.post('login',this.formData)
+      const res = { data:{meta: { msg: "登录成功!", status: 200 },data: {token: "123456"}}};
+      const {meta: { msg, status } } = res.data;
+      if(status == 200){
+        // 成功
+        // 跳转/提示/记录token
+        this.$message.success(msg);
+        // 记录token
+        sessionStorage.setItem('token',res.data.data.token);
+        this.$router.push('/')
+      }else{
+        this.$message.error(msg)
+      }
     }
   }
 }
